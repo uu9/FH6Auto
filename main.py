@@ -249,8 +249,8 @@ class FH_UltimateBot(ctk.CTk):
             "chk_2": True,
             "chk_3": True,
             "global_loops": 10,
-            "skill_dirs": ["up", "right", "up", "up", "left"],
-            "share_code": "123456789",
+            "skill_dirs": ["right", "up", "up", "up", "left"],
+            "share_code": "175882167",
             "base_width": 1920,
             "auto_restart": False,
             "restart_cmd": "start steam://run/2483190",
@@ -1099,7 +1099,7 @@ class FH_UltimateBot(ctk.CTk):
                 return pos
         return None
 
-    def find_image(self, template_path, region=None, threshold=0.85):
+    def find_image(self, template_path, region=None, threshold=0.75):
         try:
             template_orig, actual_path = self.load_template(template_path)
             if template_orig is None:
@@ -1815,7 +1815,7 @@ class FH_UltimateBot(ctk.CTk):
             self.game_click(pos_cls)
             time.sleep(1.5)
             self.hw_press("enter")
-            time.sleep(1.2)
+            time.sleep(1.5)
 
             for dk in self.config["skill_dirs"]:
                 if not self.is_running:
@@ -1823,7 +1823,7 @@ class FH_UltimateBot(ctk.CTk):
                 self.hw_press(dk)
                 time.sleep(0.2)
                 self.hw_press("enter")
-                time.sleep(1.2)
+                time.sleep(1.5)
             if self.find_image("SPNE.png", region=self.regions["全界面"], threshold=0.7):
                 self.log("已无技能点或技能已点完。")
                 time.sleep(1.0)
